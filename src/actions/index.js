@@ -6,7 +6,7 @@ export const ActionTypes = {
   FETCH_POSTS: 'FETCH_POSTS',
   FETCH_POST: 'FETCH_POST',
   CREATE_POST: 'CREATE_POST',
-  // UPDATE_POST: 'UPDATE_POST',
+  UPDATE_POST: 'UPDATE_POST',
   DELETE_POST: 'DELETE_POST',
 };
 
@@ -44,6 +44,17 @@ export function createPost(post) {
       console.log(response.data);
     }).catch(error => {
       console.log('Can\'t create post. Please try again.');
+    });
+  };
+}
+
+export function updatePost(id, post) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then(response => {
+      dispatch({ type: 'UPDATE_POST', payload: response.data });
+      console.log(response.data);
+    }).catch(error => {
+      console.log('Can\'t update post. Please try again.');
     });
   };
 }
