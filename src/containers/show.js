@@ -61,6 +61,14 @@ class Show extends Component {
 
 
   render() {
+    if (this.state.title === '') {
+      return (
+        <div>
+          <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+          <span className="sr-only">Loading...</span>
+        </div>
+      );
+    }
     if (this.state.isEditing === true) {
       return (
         <div>
