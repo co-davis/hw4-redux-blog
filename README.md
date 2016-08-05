@@ -2,7 +2,7 @@
 
 [Link to my blog](myblog.surge.sh)
 
-In this homework I rolled my own blog platform using react+redux.
+In this homework I rolled my own blog platform using react+redux. Note: I do not take responsibility for whatever images get pulled up based on the post tags
 
 ## What worked
 - Everything (routing, API calls, views, etc)
