@@ -9,10 +9,12 @@ const NavBar = () => {
       <Navbar inverse>
         <Navbar.Header pullLeft>
           <Navbar.Brand>
-            <Link to="/"> C
-              <i className="fa fa-circle-o-notch  fa-spin"></i>
-              DBLOG
-            </Link>
+            <span className="nav-logo">
+              <Link to="/"> MY BL
+                <i className="fa fa-circle-o-notch  fa-spin"></i>
+                G
+              </Link>
+            </span>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

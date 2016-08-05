@@ -1,13 +1,30 @@
+
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: darken(white, 10%);
+  background: linear-gradient(darken(white, 10%), darken(white, 50%)); 
   margin: 50px;
   font-size: 16px;
 }
 
+.blogpost-title {
+  font-family: 'Merriweather', serif;
+  font-size: 36px;
+}
 
-#newPost-button {
+.blogpost-image {
   float: right;
+  padding: 5px;
+}
 
+a:link {
+  color: rgb(33, 150, 243);
+}
+
+a:visited {
+    color: rgb(33, 150, 243);
+}
+
+a:hover {
+    color: rgb(33, 150, 243);
 }

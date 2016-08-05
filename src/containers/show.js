@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPost, deletePost, updatePost } from '../actions/index';
-import { Button, Glyphicon } from 'react-bootstrap';
+import { Button, Glyphicon, Label } from 'react-bootstrap';
 import Textarea from 'react-textarea-autosize';
 import marked from 'marked';
 
@@ -61,18 +61,38 @@ class Show extends Component {
 
 
   render() {
+    let image = `http://loremflickr.com/600/300/${this.state.tags}`;
+
     if (this.state.title === '') {
       return (
         <div>
           <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i>
           <span className="sr-only">Loading...</span>
+          <Button bsSize="large" onClick={this.onEditClick}><Glyphicon glyph="pencil" /> Edit Post</Button>
+          <Button bsStyle="danger" onClick={this.onDeleteClick}><Glyphicon glyph="trash" /> Delete Post</Button>
         </div>
       );
     }
     if (this.state.isEditing === true) {
       return (
         <div>
-          <div>
+          <div className="forminput">
+          Title: &nbsp;
+            <Textarea
+              value={this.state.title}
+              onChange={e => this.setState({ title: e.target.value })}
+            />
+          </div>
+          <div className="forminput">
+          Tags: &nbsp;
+            <Textarea
+              value={this.state.tags}
+              onChange={e => this.setState({ tags: e.target.value })}
+            />
+          </div>
+
+          <div className="forminput">
+            Content: &nbsp;
             <Textarea
               value={this.state.content}
               onChange={e => this.setState({ content: e.target.value })}
@@ -84,10 +104,11 @@ class Show extends Component {
     );
     } else {
       return (
-        <div>
-          <h1>{this.state.title}</h1>
-          <h2>Tags: {this.state.tags}</h2>
-          <div className="postContent" dangerouslySetInnerHTML={{ __html: marked(this.state.content || '') }} />
+        <div className="blogpost-container">
+          <div className="blogpost-title">{this.state.title}</div>
+          <h3><Label>{this.state.tags}</Label></h3>
+          <img className="blogpost-image" src={image} alt={this.state.tags} />
+          <div className="blogpost-content" dangerouslySetInnerHTML={{ __html: marked(this.state.content || '') }} />
           <Button bsSize="large" onClick={this.onEditClick}><Glyphicon glyph="pencil" /> Edit Post</Button>
           <Button bsStyle="danger" onClick={this.onDeleteClick}><Glyphicon glyph="trash" /> Delete Post</Button>
 

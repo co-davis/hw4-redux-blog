@@ -48,18 +48,21 @@ class New extends Component {
             {' '}
             <FormControl onChange={this.onTitleChange} value={this.state.title} placeholder="Post title" />
           </FormGroup>
+
           {' '}
           <FormGroup controlId="formhorizontalTags">
             <ControlLabel>Tags</ControlLabel>
             {' '}
             <FormControl onChange={this.onTagsChange} value={this.state.tags} placeholder="Post tags" />
           </FormGroup>
+
           {' '}
-          <FormGroup controlId="formhorizontalBody">
-            <ControlLabel>Body</ControlLabel>
+          <FormGroup controlId="formhorizontalContent">
+            <ControlLabel>Content</ControlLabel>
             {' '}
             <FormControl onChange={this.onContentChange} value={this.state.content} placeholder="Post body" />
           </FormGroup>
+
           {' '}
           <Button onClick={this.onCreateClick}>Create Post</Button>
         </Form>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 import BlogPost from '../components/blogpost';
-import { Grid } from 'react-bootstrap';
 
 
 // example class based component (smart component)
@@ -24,7 +23,7 @@ class Index extends Component {
       <div>
         {this.props.posts.map(post => {
           return (
-            <BlogPost title={post.title} postId={post.id} tags={post.tags} content={post.content} key={post.id} />
+            <BlogPost title={post.title} postId={post.id} tags={post.tags} key={post.id} />
             );
         })}
       </div>
