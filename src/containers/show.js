@@ -32,6 +32,7 @@ class Show extends Component {
     if (props.post) {
       this.setState({
         title: props.post.title,
+        author: props.post.author.username,
         tags: props.post.tags,
         content: props.post.content,
         oldContent: props.post.content,
@@ -106,6 +107,7 @@ class Show extends Component {
       return (
         <div className="blogpost-container">
           <div className="blogpost-title">{this.state.title}</div>
+          <div className="blogpost-author">{`Author: ${this.state.author}`}</div>
           <h3><Label>{this.state.tags}</Label></h3>
           <img className="blogpost-image" src={image} alt={this.state.tags} />
           <div className="blogpost-content" dangerouslySetInnerHTML={{ __html: marked(this.state.content || '') }} />

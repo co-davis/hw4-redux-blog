@@ -9,13 +9,19 @@ class SignUp extends Component {
     super(props);
 
     this.state = {
+      email: '',
       userName: '',
       userPass: '',
     };
-
+    this.onEmailChange = this.onEmailChange.bind(this);
     this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onSignUpClick = this.onSignUpClick.bind(this);
+  }
+
+  onEmailChange(event) {
+    console.log(event.target.value);
+    this.setState({ email: event.target.value });
   }
 
   onUsernameChange(event) {
@@ -29,13 +35,21 @@ class SignUp extends Component {
   }
 
   onSignUpClick(event) {
-    this.props.signupUser({ email: this.state.userName, password: this.state.userPass });
+    this.props.signupUser({ email: this.state.email, username: this.state.userName, password: this.state.userPass });
   }
 
   render() {
     return (
       <div id="signin-form">
         <Form horizontal>
+
+          <FormGroup bsSize="large" controlId="formhortizontalEmail">
+            <ControlLabel>Email</ControlLabel>
+            {' '}
+            <FormControl onChange={this.onEmailChange} value={this.state.email} placeholder="Email" />
+          </FormGroup>
+
+          {' '}
           <FormGroup bsSize="large" controlId="formhortizontalUsername">
             <ControlLabel>Username</ControlLabel>
             {' '}

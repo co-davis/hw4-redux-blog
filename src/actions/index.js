@@ -15,7 +15,7 @@ export const ActionTypes = {
 
 // const ROOT_URL = 'http://hw5-blog-backend.herokuapp.com/api';
 const ROOT_URL = 'http://localhost:9090/api';
-const API_KEY = '';
+const API_KEY = '?key=c_davis';
 
 export function fetchPosts() {
   return (dispatch) => {
