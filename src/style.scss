@@ -2,7 +2,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: linear-gradient(darken(white, 10%), darken(white, 50%)); 
+  background: linear-gradient(darken(white, 10%), darken(white, 50%));
   margin: 50px;
   font-size: 16px;
 }
@@ -27,4 +27,12 @@ a:visited {
 
 a:hover {
     color: rgb(33, 150, 243);
+}
+
+#signin-button {
+  padding-left: 5px;
+}
+
+#signup-button {
+  padding-left: 5px;
 }

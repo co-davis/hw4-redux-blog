@@ -63,16 +63,16 @@ class Show extends Component {
   render() {
     let image = `http://loremflickr.com/600/300/${this.state.tags}`;
 
-    if (this.state.title === '') {
-      return (
-        <div>
-          <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-          <span className="sr-only">Loading...</span>
-          <Button bsSize="large" onClick={this.onEditClick}><Glyphicon glyph="pencil" /> Edit Post</Button>
-          <Button bsStyle="danger" onClick={this.onDeleteClick}><Glyphicon glyph="trash" /> Delete Post</Button>
-        </div>
-      );
-    }
+    // if (this.state.title === '') {
+    //   return (
+    //     <div>
+    //       <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+    //       <span className="sr-only">Loading...</span>
+    //       <Button bsSize="large" onClick={this.onEditClick}><Glyphicon glyph="pencil" /> Edit Post</Button>
+    //       <Button bsStyle="danger" onClick={this.onDeleteClick}><Glyphicon glyph="trash" /> Delete Post</Button>
+    //     </div>
+    //   );
+    // }
     if (this.state.isEditing === true) {
       return (
         <div>
