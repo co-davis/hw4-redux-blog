@@ -14,8 +14,8 @@ export const ActionTypes = {
 };
 
 // const ROOT_URL = 'http://hw5-blog-backend.herokuapp.com/api';
-const ROOT_URL = 'http://localhost:9090/api';
-const API_KEY = '?key=c_davis';
+const ROOT_URL = 'http://hw5-part2.herokuapp.com/api';
+const API_KEY = '';
 
 export function fetchPosts() {
   return (dispatch) => {
@@ -110,9 +110,9 @@ export function signinUser({ email, password }) {
   // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
 
 
-export function signupUser({ email, password }) {
+export function signupUser({ email, username, password }) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup`, { email, password }).then(response => {
+    axios.post(`${ROOT_URL}/signup`, { email, username, password }).then(response => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       console.log('Login succeded');

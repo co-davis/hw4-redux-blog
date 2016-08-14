@@ -12,6 +12,7 @@ class Show extends Component {
 
     this.state = {
       title: '',
+      author: '',
       tags: '',
       content: '',
       oldContent: '',
